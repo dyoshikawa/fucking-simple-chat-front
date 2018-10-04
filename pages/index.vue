@@ -27,13 +27,12 @@ import Logo from '~/components/Logo.vue'
 
 export default {
   components: {
-    Logo
-  }
+    Logo,
+  },
 }
 </script>
 
 <style>
-
 .container {
   min-height: 100vh;
   display: flex;
