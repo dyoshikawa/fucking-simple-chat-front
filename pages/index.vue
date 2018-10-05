@@ -3,7 +3,7 @@
     <div>
       <logo/>
       <h1 class="title">
-        pwcp-front
+        nuxt-typescript-template
       </h1>
       <h2 class="subtitle">
         My spectacular Nuxt.js project

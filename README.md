@@ -1,4 +1,4 @@
-# pwcp-front
+# nuxt-typescript-template
 
 > My spectacular Nuxt.js project
 
