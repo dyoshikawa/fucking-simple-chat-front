@@ -1,25 +1,12 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        nuxt-typescript-template
-      </h1>
-      <h2 class="subtitle">
-        My spectacular Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+  <div>
+    <b-pagination
+      size="md"
+      :total-rows="100"
+      :per-page="10"
+      @change="changePage($event)"
+    />
+  </div>
 </template>
 
 <script lang="ts">
@@ -31,7 +18,11 @@ import Logo from '~/components/Logo.vue'
     Logo,
   },
 })
-export default class extends Vue {}
+export default class extends Vue {
+  changePage(page: number) {
+    this.$store.dispatch('')
+  }
+}
 </script>
 
 <style>
