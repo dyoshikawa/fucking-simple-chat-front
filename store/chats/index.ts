@@ -6,12 +6,12 @@ import { ChatsState } from './types'
 import { RootState } from '../types'
 
 export const state: ChatsState = {
-  list: [],
+  chats: [],
 }
 
 const namespaced: boolean = true
 
-export const profile: Module<ChatsState, RootState> = {
+export const chats: Module<ChatsState, RootState> = {
   namespaced,
   state,
   getters,
