@@ -5,6 +5,7 @@
   "rules": {
     "no-namespace": false,
     "no-string-literal": false,
+    "no-empty-interface": false,
     "max-line-length": {
       "options": { "limit": 120 },
       "severity": "warn"
