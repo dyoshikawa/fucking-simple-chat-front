@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-typescript-template",
+  "name": "fucking-simple-chat",
   "version": "1.0.0",
-  "description": "My spectacular Nuxt.js project",
+  "description": "use nuxt.js, express, socket.io and sequelize.",
   "author": "crunchtimer.yoshikawa",
   "private": true,
   "scripts": {
