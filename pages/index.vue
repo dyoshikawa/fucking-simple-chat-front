@@ -39,6 +39,7 @@
       v-for="chat in computedChats"
       :key="chat.id"
       :title="chat.name"
+      :sub-title="chat.createdAt"
       class="mb-2"
     >
       {{ chat.content }}
