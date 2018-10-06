@@ -1,5 +1,7 @@
 <template>
   <div>
+    <b-button @click="click">chat</b-button>
+
     <b-pagination
       size="md"
       :total-rows="100"
@@ -12,7 +14,9 @@
         v-for="chat in computedChats"
         :key="chat.id"
       >
+        {{ chat.createdAt }} 
         {{ chat.name }}
+        {{ chat.content }}
       </li>
     </ul>
   </div>
@@ -22,6 +26,9 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import Logo from '~/components/Logo.vue'
 import { Chat } from '~/store/chats/types'
+import io from 'socket.io-client'
+
+const socket = io('http://localhost:8080')
 
 @Component({
   components: {
@@ -30,6 +37,10 @@ import { Chat } from '~/store/chats/types'
   async created() {
     console.log('created')
     await this.$store.dispatch('chats/fetchChats')
+    socket.on('chat message', chat => {
+      console.log(chat)
+      this.$store.commit('chats/addChat', chat)
+    })
   },
 })
 export default class extends Vue {
@@ -39,6 +50,10 @@ export default class extends Vue {
 
   changePage(page: number) {
     this.$store.dispatch('chats/fetchChats')
+  }
+
+  click() {
+    socket.emit('message', { name: 'name', content: 'content' })
   }
 }
 </script>

@@ -5,4 +5,8 @@ export const mutations: MutationTree<ChatsState> = {
   setChats(state, payload: Chat[]) {
     state.chats = payload
   },
+
+  addChat(state, payload: Chat) {
+    state.chats.unshift(payload)
+  },
 }
