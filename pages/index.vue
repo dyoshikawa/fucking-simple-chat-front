@@ -49,11 +49,11 @@
 
 <script lang="ts">
 import { Component, Vue, Provide } from 'nuxt-property-decorator'
-import Logo from '~/components/Logo.vue'
 import { Chat } from '~/store/chats/types'
 import io from 'socket.io-client'
+import { apiUrl } from '~/config'
 
-const socket = io('http://localhost:8080')
+const socket = io(apiUrl)
 
 @Component
 export default class extends Vue {
